@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/sample_navigator"
+    app:startDestination="@id/mainFragment">
+
+    <fragment
+        android:id="@+id/fragmentA"
+        android:name="com.granson.seniordeveloper.ui.fragments.frags.FragmentA"
+        android:label="FragmentA" >
+        <action
+            android:id="@+id/action_A_to_B"
+            app:destination="@id/fragmentB" />
+        <action
+            android:id="@+id/action_A_to_main"
+            app:destination="@id/mainFragment" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/fragmentB"
+        android:name="com.granson.seniordeveloper.ui.fragments.frags.FragmentB"
+        android:label="FragmentB" >
+        <action
+            android:id="@+id/action_B_to_A"
+            app:destination="@id/fragmentA" />
+        <action
+            android:id="@+id/action_B_to_main"
+            app:destination="@id/mainFragment" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/mainFragment"
+        android:name="com.granson.seniordeveloper.ui.fragments.frags.MainFragment"
+        android:label="MainFragment" >
+        <action
+            android:id="@+id/action_main_to_A"
+            app:destination="@id/fragmentA">
+            <argument
+                android:name="myArg"
+                app:argType="integer"
+                android:defaultValue="1" />
+        </action>
+        <action
+            android:id="@+id/action_main_to_B"
+            app:destination="@id/fragmentB"/>
+    </fragment>
+
+</navigation>
